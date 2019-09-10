@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SQLlite</string>
+    <string name="name">Name</string>
+    <string name="phone">Phone</string>
+    <string name="address">Address</string>
+    <string name="gender">Gender</string>
+    <string name="save">SAVE</string>
+    <string name="drop_table">DROP TABLE IF EXISTS</string>
+</resources>
