@@ -55,14 +55,31 @@
             android:importantForAutofill="no"
             />
         <Button
+            android:layout_marginLeft="@dimen/dp_60"
             android:onClick="onClick"
             android:layout_marginTop="@dimen/dp_10"
             android:layout_below="@id/text_gender"
             android:id="@+id/button_save"
             android:text="@string/save"
             android:textSize="@dimen/sp_20"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_60"
+            />
+        <Button
+            android:layout_marginLeft="@dimen/dp_30"
+            android:onClick="onClick"
+            android:layout_toRightOf="@id/button_save"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_below="@id/text_gender"
+            android:id="@+id/button_load"
+            android:text="@string/load"
+            android:textSize="@dimen/sp_20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/button_save"
+            android:layout_marginStart="@dimen/dp_30"
+            />
     </RelativeLayout>
     <RelativeLayout
         android:padding="@dimen/dp_5"
@@ -72,6 +89,8 @@
         android:layout_height="wrap_content">
 
         <ListView
+            android:padding="@dimen/dp_5"
+            android:id="@+id/list_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
     </RelativeLayout>

@@ -11,6 +11,8 @@ public class Personal {
         mGender = gender;
     }
 
+    Personal(){}
+
     public Personal(int id, String name, String phone, String add, String gender) {
         mId = id;
         mName = name;

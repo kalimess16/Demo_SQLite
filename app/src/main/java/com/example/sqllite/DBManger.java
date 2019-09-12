@@ -1,5 +1,6 @@
 package com.example.sqllite;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -7,6 +8,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 import androidx.annotation.Nullable;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.PropertyPermission;
 
 public class DBManger extends SQLiteOpenHelper {
 
@@ -94,5 +98,29 @@ public class DBManger extends SQLiteOpenHelper {
         cursor.close();
         db.close();
         return personal;
+    }
+
+    List<Personal> getAllListPersonal(){
+        List<Personal> personalList = new ArrayList<>();
+
+        String sqlQuery = mContext.getString(R.string.selectAll) +" " + TABLE_NAME;
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        @SuppressLint("Recycle")
+        Cursor cursor = db.rawQuery(sqlQuery,null);
+        if (cursor.moveToFirst()){
+            do {
+                Personal personal = new Personal();
+                personal.setName(cursor.getString(1));
+                personal.setPhone(cursor.getString(2));
+                personal.setAdd(cursor.getString(3));
+                personal.setGender(cursor.getString(4));
+                personalList.add(personal);
+
+            }while (cursor.moveToNext());
+        }
+        db.close();
+        cursor.close();
+        return personalList;
     }
 }

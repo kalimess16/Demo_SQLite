@@ -6,4 +6,10 @@
     <string name="gender">Gender</string>
     <string name="save">SAVE</string>
     <string name="drop_table">DROP TABLE IF EXISTS</string>
+    <string name="set_name">Set name</string>
+    <string name="set_phone">Set Phone</string>
+    <string name="set_gender">Set Gender</string>
+    <string name="set_address">Set Address</string>
+    <string name="load">Load</string>
+    <string name="selectAll">SELECT * FROM</string>
 </resources>
